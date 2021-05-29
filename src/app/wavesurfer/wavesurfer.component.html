@@ -1,0 +1,14 @@
+<div class="wavewrapper card">
+	<div id="waveform"></div>
+	<div id="wave-timeline"></div>
+  <mat-button-toggle-group *ngIf="ws.wave" class="controls">
+    <mat-button-toggle [ngClass]="{'active':ws.isPlaying}" mat-flat-button (click)="ws.playPause()"> <mat-icon>play_arrow</mat-icon></mat-button-toggle>
+    <mat-button-toggle [ngClass]="{'active':ws.isPaused}" mat-flat-button (click)="ws.playPause()"><mat-icon>pause</mat-icon></mat-button-toggle>
+    <mat-button-toggle [ngClass]="{'active':ws.isStopped}" mat-flat-button (click)="ws.onStopPressed()">  <mat-icon>stop</mat-icon></mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+<pre>
+currenttime: {{ ws.currentTimeSrc | async }}
+ct: {{ ws.ct }}
+isplaying: {{ ws.isPlaying }}
+</pre>
